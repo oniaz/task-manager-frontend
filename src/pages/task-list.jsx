@@ -17,7 +17,7 @@ const TaskListPage = () => {
     event.preventDefault();
     axios
       .post(
-        "http://localhost:5000/api/tasks/",
+        "https://task-manager-backend-eta.vercel.app/api/tasks/",
         {
           title: taskForm.title,
           description: taskForm.description,
@@ -41,7 +41,7 @@ const TaskListPage = () => {
   };
   function fetchTasksList() {
     axios
-      .get("http://localhost:5000/api/tasks/", {
+      .get("https://task-manager-backend-eta.vercel.app/api/tasks/", {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
@@ -52,7 +52,7 @@ const TaskListPage = () => {
   }
   function deleteTask(taskId) {
     axios
-      .delete("http://localhost:5000/api/tasks/" + taskId, {
+      .delete("https://task-manager-backend-eta.vercel.app/api/tasks/" + taskId, {
         headers: {
           Authorization: `Bearer ${auth.token}`,
         },
@@ -66,7 +66,7 @@ const TaskListPage = () => {
   function toggleTaskComplete(taskId, status) {
     axios
       .patch(
-        "http://localhost:5000/api/tasks/" + taskId,
+        "https://task-manager-backend-eta.vercel.app/api/tasks/" + taskId,
         { status: status === "completed" ? "in_progress" : "completed" },
         {
           headers: {

@@ -16,7 +16,7 @@ const LoginPage = () => {
     event.preventDefault();
     // http://localhost:5000/api/user/register
     axios
-      .post("http://localhost:5000/api/users/login", {
+      .post("https://task-manager-backend-eta.vercel.app/api/users/login", {
         email,
         password,
       })
